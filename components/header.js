@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     headerContainer:{
         backgroundColor:"coral",
         padding:10,
+        marginTop:50,
         marginBottom:5,
         
     },
