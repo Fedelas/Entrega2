@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TextInput } from 'react-native';
 import Header from './components/header';
-import SemiordinalapItem from './components/semiordnilapItem';
+import SemordinalapItem from './components/semordnilapItem';
 
 
 export default function App() {
@@ -69,7 +69,7 @@ export default function App() {
       <View style={styles.inputSolutionContainer}>
         <TextInput
           autoCapitalize='characters'
-          placeholder='Write the Semiordnilap for the item below...'
+          placeholder='Write the Semordnilap for the item below...'
           value={proposedSolution}
           onChangeText={changeHandler}
         />
@@ -78,7 +78,7 @@ export default function App() {
         <FlatList
           data={list}
           renderItem={({ item }) => (
-            <SemiordinalapItem item={item} onPressHandler={onPressHandler} />
+            <SemordinalapItem item={item} onPressHandler={onPressHandler} />
           )}
         />
       </View>

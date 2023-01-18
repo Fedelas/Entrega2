@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
-export default function SemiordinalapItem({item, onPressHandler}){
+export default function SemordinalapItem({item, onPressHandler}){
    
     
     // function to create the Semiordinalap Item
-    function semiordnilapItem(item) {
+    function semordnilapItem(item) {
         const chars = [...item]
         let result = ''
         for(let i=(chars.length -1);i>=0;i--){
@@ -21,13 +21,13 @@ export default function SemiordinalapItem({item, onPressHandler}){
    
     return(
     
-   <TouchableOpacity onPress={()=>onPressHandler(item.name,item.key)} style={styles.semiordinalapItemContainer}>
-        <Text style={styles.semiordinalapItemTitle}>{semiordnilapItem(item.name)}</Text>
+   <TouchableOpacity onPress={()=>onPressHandler(item.name,item.key)} style={styles.semordinalapItemContainer}>
+        <Text style={styles.semordinalapItemTitle}>{semordnilapItem(item.name)}</Text>
    </TouchableOpacity>)
 }
 
 const styles = StyleSheet.create({
-    semiordinalapItemContainer:{
+    semordinalapItemContainer:{
         flex:1,
         alignContent:'center',
         justifyContent:'center',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         marginBottom:150,
     },
 
-    semiordinalapItemTitle:{
+    semordinalapItemTitle:{
         flex:1,
         alignContent:'center',
         justifyContent:'center',

@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Header(){
    return(
    <View style={styles.headerContainer}>
-        <Text style={styles.headerTitle}>Semiordnilap</Text>
+        <Text style={styles.headerTitle}>Semordnilap</Text>
    </View>)
 }
 
