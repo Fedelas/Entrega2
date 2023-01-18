@@ -8,35 +8,17 @@ import SemordinalapItem from './components/semordnilapItem';
 export default function App() {
 
   const [list, setList] = useState([
-    { name: "ABJURE", key: 1 },
-    { name: "AGONISTIC", key: 2 },
-    { name: "AIRLINE", key: 3 },
-    { name: "BANDIT", key: 4 },
-    { name: "BANQUET", key: 5 },
-    { name: "BINOCULARS", key: 6 },
-    { name: "BIOLOGIST", key: 7 },
-    { name: "BLACKBOARD", key: 8 },
-    { name: "BOARD", key: 9 },
-    { name: "BOOKWORM", key: 10 },
-    { name: "FUTURE", key: 11 },
-    { name: "GARLAND", key: 12 },
-    { name: "GIGANTIC", key: 13 },
-    { name: "GOOFY", key: 14 },
-    { name: "GOVERNMENT", key: 15 },
-    { name: "GRANDNIECES", key: 16 },
-    { name: "HANDBOOK", key: 17 },
-    { name: "HIMSELF", key: 18 },
-    { name: "INDULGE", key: 19 },
-    { name: "INFLATABLE", key: 20 },
-    { name: "PICNIC", key: 21 },
-    { name: "PROTECT", key: 22 },
-    { name: "PUBLISH", key: 23 },
-    { name: "QUADRANGLE", key: 24 },
-    { name: "RECOUNT", key: 25 },
-    { name: "REDOUBTABLE", key: 26 },
-    { name: "REFLECTION", key: 27 },
-    { name: "REPORTER", key: 28 },
-    { name: "RING", key: 29 },
+    { name: "DELIVER", key: 1 },
+    { name: "DENIM", key: 2 },
+    { name: "DESSERTS", key: 3 },
+    { name: "REPAID", key: 4 },
+    { name: "DOOM", key: 5 },
+    { name: "NAMETAG", key: 6 },
+    { name: "STEP", key: 7 },
+    { name: "REWARDER", key: 8 },
+    { name: "STOPS", key: 9 },
+    { name: "PEELS", key: 10 },
+
   ]);
 
 
@@ -61,7 +43,7 @@ export default function App() {
     } else {
       return Alert.alert('OPPS, that was wrong :( ', '', [{ text: 'OK', onPress: () => console.log(name) }])
     }
- }
+  }
 
   return (
     <View style={styles.container}>
