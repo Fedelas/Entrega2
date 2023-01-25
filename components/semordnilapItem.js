@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Colors from '../constants/colors'
 
 
 export default function SemordinalapItem({item, onPressHandler}){
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         fontWeight:'bold',
         fontSize:30,
-        backgroundColor:"gold",
+        backgroundColor:Colors.secondary,
         padding:10,
         margin:25,
         borderColor:'black',
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         fontWeight:'bold',
         fontSize:30,
-        backgroundColor:"gold",
+        backgroundColor:Colors.secondary,
         margin:40,
         borderColor:'black',
         
