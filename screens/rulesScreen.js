@@ -36,9 +36,9 @@ export default function RulesScreen({newStyle}) {
     flex: 1,
       backgroundColor: '#fff',
       padding: 10,
+      marginBottom:200
     },
     containerTitle: {
-      flex: 1,
       fontSize: 50,
       textAlign:'center',
       padding:10,
@@ -46,10 +46,10 @@ export default function RulesScreen({newStyle}) {
   
     textContainer: {
       padding: 10,
-      marginBottom: 200,
       borderBottomWidth: 1,
       borderBottomColor: 'grey',
       fontSize: 50,
+      
     },
   });
   
