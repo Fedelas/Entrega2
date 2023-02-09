@@ -1,23 +1,22 @@
 import React from "react";
 import { StyleSheet, View, Button, Text } from 'react-native';
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import COLORS from '../constants/colors'
-import StartScreen from '../screens/startScreen'
-import GameScreen from '../screens/gameScreen'
+import Settings from '../screens/settings'
+
 
 
 const Stack =createNativeStackNavigator();
 
 
-const Navigator = () => {
+const SettingsNavigator = () => {
     return (
       
         
         <Stack.Navigator 
-        initialRouteName="Home"
+        initialRouteName="Settings"
         screenOptions={{
           headerStyle: { backgroundColor: COLORS.primary },
           headerTintColor: 'black',
@@ -25,17 +24,13 @@ const Navigator = () => {
             fontWeight: "bold",
           },
         }}>
-          <Stack.Screen name="Home" component={StartScreen} 
+          <Stack.Screen name="Settings" component={Settings} 
           options={{
             title: "SEMORDNILAP",
           }}
           
           />
-          <Stack.Screen name="GameScreen" component={GameScreen} 
-          options={{
-            title: "",
-          }}
-          />
+          
         </Stack.Navigator>
  
 
@@ -47,4 +42,4 @@ const Navigator = () => {
 
 
 
-export default Navigator;
+export default SettingsNavigator;

@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
 import Navigator from './navigation/Navigator';
+import TabNavigator from './navigation/TabNavigator';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
 
 import { useFonts } from 'expo-font';
 //import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -18,13 +24,19 @@ export default function App() {
     KalamRegular: require('./assets/fonts/Kalam-Regular.ttf'),
   })
 
+  
+
+
     
 
   if (!loaded) {
     return null
   } else {
     return (
-      <Navigator />
+      
+      <NavigationContainer>
+         <TabNavigator />
+      </NavigationContainer>
     
     );
 }
@@ -35,8 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 10,
-    fontFamily:'KalamRegular'
-  },
+    },
 
 
 });

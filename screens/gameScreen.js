@@ -56,6 +56,7 @@ export default function GameScreen() {
       <View style={styles.content}>
         <FlatList
           data={list}
+          style={flexGrow=0}
           renderItem={({ item }) => (
             <SemordinalapItem item={item} onPressHandler={onPressHandler} />
           )}
