@@ -1,8 +1,12 @@
 
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
+import { Provider } from 'react-redux';
+
 import Navigator from './navigation/Navigator';
 import TabNavigator from './navigation/TabNavigator';
+
+import { store } from './store/index'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -24,22 +28,25 @@ export default function App() {
     KalamRegular: require('./assets/fonts/Kalam-Regular.ttf'),
   })
 
-  
 
 
-    
+
+
 
   if (!loaded) {
     return null
   } else {
     return (
-      
-      <NavigationContainer>
-         <TabNavigator />
-      </NavigationContainer>
-    
+
+
+
+      <Provider store={store}>
+        <NavigationContainer>
+          <TabNavigator />
+        </NavigationContainer>
+      </Provider>
     );
-}
+  }
 }
 
 const styles = StyleSheet.create({
@@ -47,7 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 10,
-    },
+  },
 
 
 });

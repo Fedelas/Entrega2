@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
+import TimeCounter from '../components/timeCounter';
 export default function Settings({newStyle}) {
 
 
@@ -7,13 +9,11 @@ export default function Settings({newStyle}) {
     return (
       
         <View style={styles.container}>
-    <Text style={styles.containerTitle}> SETTINGS</Text>
-        <View style={styles.textContainer}>
-      <Text style={newStyle}> 
-     TIMER 
-      </Text>
+    <Text style={styles.containerTitle}> Select time between 15 and 90 seconds</Text>
+        
+     <TimeCounter />
 
-      </View>
+      
     </View>
   
   
@@ -26,7 +26,7 @@ export default function Settings({newStyle}) {
     flex: 1,
       backgroundColor: '#fff',
       padding: 10,
-      marginBottom:200
+      marginBottom:100
     },
     containerTitle: {
       fontSize: 50,
