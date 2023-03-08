@@ -44,7 +44,13 @@ const ImageSelector = (props) => {
     return(
         <View style={styles.container}>
             <View style={styles.preview}>
-            <Image style={styles.image} source={{ uri:pickedUri}}/>
+                {!pickedUri ?
+                (<Text>"No selected image"</Text>)
+                :
+                <Image style={styles.image} source={{ uri:pickedUri}}/>
+
+                }
+            
             </View>
             <Button
                 title="AVATAR Picture"
