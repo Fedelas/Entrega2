@@ -6,7 +6,14 @@ import { Provider } from 'react-redux';
 import Navigator from './navigation/Navigator';
 import TabNavigator from './navigation/TabNavigator';
 
-import { store } from './store/index'
+import store from './store'
+
+import  {init}  from './db'; //importamos la base de datos
+init()
+.then(()=>console.log("DB initialized"))
+.catch((err)=>{
+  console.log("DB not initialized")
+  console.log(err.message)})
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TextInput } from 'react-native';
 import SemordinalapItem from '../components/semordnilapItem';
+import { insertScore } from '../db';
+import { useSelector, useDispatch } from "react-redux";
+import * as scoreAction from "../store/actions/scoreAction";
 
 
-export default function GameScreen() {
+export default function GameScreen({navigation}) {
+  const dispatch = useDispatch();
+  const [correctAnswers, setCorrectAnswers] = useState(0)
 
   const [list, setList] = useState([
     { name: "DELIVER", key: 1 },
@@ -29,17 +34,39 @@ export default function GameScreen() {
   }
 
 
+  const handleSaveScore = (val) => {
+    dispatch(scoreAction.updateScore(val));
+    
+  };
+
+ 
 
   const onPressHandler = (name, key) => {
+    if (key == 10){
+      handleSaveScore(correctAnswers+1)
+      
+             
+      return Alert.alert('GAME FINISH :) ', `Your score is: ${correctAnswers+1}`, [{ text: 'OK', onPress: () => {
+        console.log(correctAnswers+1);
+        
+        navigation.goBack()
+      } }])
+    }
 
     if (name == proposedSolution) {
       clearInput();
       setList((prevState => {
         return prevState.filter(itemSelected => itemSelected.key != key)
       }
-      ))
+      ));
+      setCorrectAnswers(correctAnswers+1)
+      
     } else {
-      return Alert.alert('OPPS, that was wrong :( ', '', [{ text: 'OK', onPress: () => console.log(name) }])
+      return Alert.alert('OPPS, that was wrong :( ', '', [{ text: 'CONTINUE', onPress: () => {
+        console.log(name);
+        console.log(correctAnswers);
+        setCorrectAnswers(0)
+      } }])
     }
   }
 

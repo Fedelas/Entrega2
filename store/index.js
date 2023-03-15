@@ -1,8 +1,13 @@
-import { createStore, combineReducers} from 'redux';
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+
+// reducers
 import CountReducer from './reducers/countReducer';
- 
-const counterReducer = combineReducers({
+import ScoreReducer from './reducers/scoreReducer';
+
+const RootReducer = combineReducers({
   count: CountReducer,
+  scores:ScoreReducer
 });
- 
-export const store = createStore(counterReducer);
+
+export default createStore(RootReducer, applyMiddleware(thunk));
