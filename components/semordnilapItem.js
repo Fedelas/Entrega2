@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import Colors from '../constants/colors'
 
 
 export default function SemordinalapItem({item, onPressHandler}){
    
-    
+     
+
     // function to create the Semiordinalap Item
     function semordnilapItem(item) {
         const chars = [...item]
@@ -30,13 +31,11 @@ export default function SemordinalapItem({item, onPressHandler}){
 const styles = StyleSheet.create({
     semordinalapItemContainer:{
         flex:1,
-        alignContent:'center',
+        alignItems:'center',
         justifyContent:'center',
-        fontWeight:'bold',
-        fontSize:30,
         backgroundColor:Colors.secondary,
-        padding:10,
-        margin:25,
+        padding:5,
+        margin:15,
         borderColor:'black',
         borderWidth:1,
         borderRadius:10,
@@ -45,12 +44,14 @@ const styles = StyleSheet.create({
 
     semordinalapItemTitle:{
         flex:1,
-        alignContent:'center',
+        alig:'center',
         justifyContent:'center',
         fontWeight:'bold',
         fontSize:30,
         backgroundColor:Colors.secondary,
-        margin:40,
+        margin:10,
+        marginBottom:40,
+        marginTop:40,
         borderColor:'black',
         
     }

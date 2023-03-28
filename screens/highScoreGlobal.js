@@ -2,36 +2,35 @@ import React, { useEffect } from "react";
 import { FlatList,StyleSheet,Text, View } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import * as scoreAction from "../store/actions/scoreAction";
+import { getHighscore } from "../store/actions/highScoreAction";
 
 const HighScoreScreens = () => {
     const dispatch = useDispatch();
-    const scores = useSelector((state) => state.scores.scores);
+    const highScoreGlobal = useSelector((state) => state.highScoreGlobal.list);
+    console.log(highScoreGlobal)
 
-   useEffect(() => {
-        dispatch(scoreAction.loadScore());
+    useEffect(() => {
+        dispatch(getHighscore());
     }, []);
 
     const renderItem = ({ item }) => (
         <View style={styles.container}>
-            
-            <Text style={styles.textContainer}> {item.score}</Text>
-            
-
+            <Text style={styles.textContainer}> {item.item.playerName}</Text>
+            <Text style={styles.textContainer}> {item.item.val}</Text>
         </View>
     );
 
     return (
         <View style={styles.container}>
-        <Text style={styles.containerTitle}> HIGHSCORES</Text>
-        
-        
+       
+        <Text style={styles.containerTitle}> HIGHSCORES GLOBAL</Text>
+
         <FlatList
-            data={scores}
+            data={highScoreGlobal}
             keyExtractor={(item) => item.id}
             renderItem={renderItem}
         />
 
-        
     </View>
 
         
@@ -55,12 +54,10 @@ const styles = StyleSheet.create({
 
     textContainer: {
         padding: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: 'grey',
         fontSize: 50,
+        textAlign:'center'
 
     },
 
     
 });
-

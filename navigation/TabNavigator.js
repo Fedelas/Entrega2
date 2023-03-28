@@ -13,6 +13,7 @@ import GameScreen from '../screens/gameScreen'
 import Navigator from "./Navigator";
 import SettingsNavigator from "./SettingsNavigator";
 import HighScoreNavigator from "./HighScoreNavigator";
+import OwnScoresNavigator from "./OwnScoresNavigator"
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +24,7 @@ const TabNavigator = () => {
 
 
         <Tab.Navigator
-            initialRouteName="HomeTab"
+            initialRouteName="Home"
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: true,
@@ -36,7 +37,7 @@ const TabNavigator = () => {
 
 
         >
-            <Tab.Screen name="HomeTab" component={Navigator}
+            <Tab.Screen name="Home" component={Navigator}
                 options={{
                     tabBarIcon: () => (
                         <View>
@@ -47,7 +48,7 @@ const TabNavigator = () => {
 
                 }
             />
-            <Tab.Screen name="SettingsTab" component={SettingsNavigator}
+            <Tab.Screen name="Settings" component={SettingsNavigator}
                 options={{
                     tabBarIcon: () => (
                         <View>
@@ -58,7 +59,18 @@ const TabNavigator = () => {
 
             />
 
-            <Tab.Screen name="HighscoreTab" component={HighScoreNavigator}
+            <Tab.Screen name="Own scores" component={OwnScoresNavigator}
+                options={{
+                    tabBarIcon: () => (
+                        <View>
+                            <AntDesign name="book" size={24} color="black" />
+                        </View>
+                    )
+                }}
+
+            />
+
+            <Tab.Screen name="Highscores" component={HighScoreNavigator}
                 options={{
                     tabBarIcon: () => (
                         <View>
@@ -71,7 +83,7 @@ const TabNavigator = () => {
 
 
 
-            
+
 
         </Tab.Navigator>
 

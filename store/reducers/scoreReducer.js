@@ -1,8 +1,10 @@
-import { ADD_SCORE, LOAD_SCORE } from "../actions/scoreAction";
+import { ADD_SCORE, LOAD_SCORE, ADD_SCORE_HS_DB, GET_SCORE_HS_DB } from "../actions/scoreAction";
 import Score from "../../models/score";
+
 
 const initialState = {
   scores: [],
+  playerName: []
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +13,7 @@ export default (state = initialState, action) => {
       const newScore = new Score(
         Date.now(),
         action.payload.score,
-        
+
       );
       return {
         ...state,
@@ -25,10 +27,21 @@ export default (state = initialState, action) => {
             new Score(
               item.id.toString(),
               item.score,
-             )
+            )
         ),
       };
-    default:
+      case ADD_SCORE_HS_DB:
       return state;
+      {/*case GET_SCORE_HS_DB:
+      return {
+        ...state,
+        scores: action.payload.score,
+        playerName:action.payload.playerName
+            
+        
+      };*/}
+
+    default:
+return state;
   }
 };

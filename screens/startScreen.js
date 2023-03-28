@@ -13,7 +13,7 @@ export default function StartScreen({navigation}) {
     <View style={styles.container}>
         <RulesScreen newStyle={{fontFamily:"KalamRegular"}} />
         <View style={styles.buttonContainer}>
-             <Button title="StartGame" onPress={() => navigation.navigate('GameScreen')} color={Colors.secondary} />
+             <Button title="Play game" onPress={() => navigation.navigate('GameScreen')} color={Colors.secondary} />
             
         </View>
         

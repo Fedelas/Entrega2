@@ -1,8 +1,8 @@
 class Score {
-    constructor(id, score) {
+    constructor(id, score,playerName) {
       this.id = id.toString();
       this.score = score;
-    }
+      }
   }
   
   export default Score;

@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import COLORS from '../constants/colors'
 import HighScoreScreens from '../screens/highScoreScreens'
 
+import HighScoreGlobal from '../screens/highScoreGlobal'
+
 
 
 
@@ -27,7 +29,7 @@ const HighScoreNavigator = () => {
             fontWeight: "bold",
           },
         }}>
-          <Stack.Screen name="Highscore" component={HighScoreScreens} 
+          <Stack.Screen name="Highscore" component={HighScoreGlobal} 
           options={{
             title: "SEMORDNILAP",
           }}
