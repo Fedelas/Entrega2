@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "WorkingWithLists",
-    "slug": "WorkingWithLists",
+    "name": "Semordnilap",
+    "slug": "Semordnilap",
     "version": "1.0.0",
+    "platforms":["ios","android"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,13 +19,19 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier":"com.fal.app",
+      "buildNumber":"1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package":"com.fal.app",
+      "versionCode":1,
+
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions":["CAMERA", "WRITE_EXTERNAL_STORAGE"]
     },
     "web": {
       "favicon": "./assets/favicon.png"

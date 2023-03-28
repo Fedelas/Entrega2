@@ -78,7 +78,7 @@ export default function GameScreen({ navigation }) {
 
   const onPressHandler = (name, key) => {
 
-    if (key == 2) {
+    if (key == 10) {
       handleSaveScore({playerName:'test',val:correctAnswers + 1})
 
 
@@ -174,13 +174,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft:15,
     paddingRight:15,
-    backgroundColor:'blue'
+    backgroundColor:'white'
   },
 
   inputSolutionContainer: {
     padding: 10,
     fontSize: 50,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     alignContent:'center',
         
   },
